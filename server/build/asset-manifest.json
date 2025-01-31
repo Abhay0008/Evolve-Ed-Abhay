@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.087fd42c.css",
+    "main.js": "/static/js/main.704916f7.js",
+    "static/media/billGates.png": "/static/media/billGates.d3da2352b2eb45ec232a.png",
+    "static/media/nelsonMandela.png": "/static/media/nelsonMandela.ca869b1cabb8e0ec0433.png",
+    "static/media/einstein.png": "/static/media/einstein.43736f22270509723565.png",
+    "static/media/apj.png": "/static/media/apj.c17a8d538c0b8cfe09dc.png",
+    "static/media/steveJobs.png": "/static/media/steveJobs.c37d37c5cfe9f581727a.png",
+    "static/media/aboutMainImage.png": "/static/media/aboutMainImage.bf93fa841eabff9a9500.png",
+    "static/media/homePageMainImage.png": "/static/media/homePageMainImage.cb4bec397779b9c290ef.png",
+    "index.html": "/index.html",
+    "main.087fd42c.css.map": "/static/css/main.087fd42c.css.map",
+    "main.704916f7.js.map": "/static/js/main.704916f7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.087fd42c.css",
+    "static/js/main.704916f7.js"
+  ]
+}
