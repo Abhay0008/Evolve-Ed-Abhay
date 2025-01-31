@@ -1,18 +1,59 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { toast } from "react-hot-toast";
 import axiosInstance from "../Helper/axiosInstance";
-
-// const initialState = {
+//-----------------------------------------------------------------
+// const initialState = { //original code
 //   isLoggedIn: localStorage.getItem("isLoggedIn") || false,
 //   data: JSON.parse(localStorage.getItem("data")) || {},
 //   role: localStorage.getItem("role") || "",
 // }; 
 
+import { useEffect, useState } from "react"; //new gpt code
+import axios from "axios";
+
+const API_BASE_URL = "https://evolve-ed-abhay-api.onrender.comapi"; // Update with your Render backend URL
+
 const initialState = {
-  isLoggedIn: localStorage.getItem("isLoggedIn") || false,
-  data: JSON.parse(localStorage.getItem("data") || "{}"), // Fix: Handle null case
-  role: localStorage.getItem("role") || "",
+  isLoggedIn: false,
+  data: {},
+  role: "",
 };
+
+const [user, setUser] = useState(initialState);
+
+useEffect(() => {
+  const fetchUser = async () => {
+    const token = localStorage.getItem("token"); // Store token instead of raw data
+    if (token) {
+      try {
+        const response = await axios.get(`${API_BASE_URL}/auth/user`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+
+        setUser({
+          isLoggedIn: true,
+          data: response.data.user,
+          role: response.data.user.role,
+        });
+      } catch (error) {
+        console.error("Error fetching user:", error);
+        localStorage.removeItem("token"); // Remove invalid token
+      }
+    }
+  };
+
+  fetchUser();
+}, []);
+
+
+
+// const initialState = { //old gpt code
+//   isLoggedIn: localStorage.getItem("isLoggedIn") || false,
+//   data: JSON.parse(localStorage.getItem("data") || "{}"), // Fix: Handle null case
+//   role: localStorage.getItem("role") || "",
+// };
+
+// -----------------------------------------------------------------
 
 // function to handle signup
 export const createAccount = createAsyncThunk("/auth/signup", async (data) => {
