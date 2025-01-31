@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 // Third-Party
 app.use(
   cors({
-    origin: 'http://localhost:3000', // Explicitly specify the allowed origin
+    origin: 'https://evolve-ed-abhay.vercel.app', // Explicitly specify the allowed origin
     credentials: true, // Allow credentials (cookies, authorization headers, etc.)
   })
 );
