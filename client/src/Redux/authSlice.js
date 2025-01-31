@@ -11,7 +11,7 @@ import axiosInstance from "../Helper/axiosInstance";
 import { useEffect, useState } from "react"; //new gpt code
 import axios from "axios";
 
-const API_BASE_URL = "https://evolve-ed-abhay-api.onrender.com/api"; // Update with your Render backend URL
+const API_BASE_URL = "https://evolve-ed-abhay-api.onrender.com/api/v1"; // Update with your Render backend URL
 
 const initialState = {
   isLoggedIn: false,
